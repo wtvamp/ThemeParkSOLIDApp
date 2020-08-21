@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/c/Users/warre/Source/Repos/SOLIDApp/SOLIDApp.csproj",
+      "projectUniqueName": "/mnt/c/Users/warre/source/Repos/SOLIDApp/SOLIDApp.csproj",
       "projectName": "SOLIDApp",
-      "projectPath": "/mnt/c/Users/warre/Source/Repos/SOLIDApp/SOLIDApp.csproj",
+      "projectPath": "/mnt/c/Users/warre/source/Repos/SOLIDApp/SOLIDApp.csproj",
       "packagesPath": "/home/wtvamp/.nuget/packages/",
-      "outputPath": "/mnt/c/Users/warre/Source/Repos/SOLIDApp/obj/",
+      "outputPath": "/mnt/c/Users/warre/source/Repos/SOLIDApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/wtvamp/.nuget/NuGet/NuGet.Config"

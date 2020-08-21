@@ -1,17 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ThemePark {
 
     public string ThemeParkName;
     public float TicketCost;
     public int AverageDailyAttendance;
-    public string ThemeParkRideAName { get; set; }  
-    public string ThemeParkRideBName { get; set; }  
-    public string ThemeParkRideCName { get; set; }  
-    public float ThemeParkRideASpeed { get; set; }  
-    public float ThemeParkRideBSpeed { get; set; }  
-    public float ThemeParkRideCSpeed { get; set; }  
+    public List<ThemeParkRide> ThemeParkRides;
     public string RestaurantAName { get; set; }  
     public string RestaurantBName { get; set; }  
     public string RestaurantCName { get; set; }  
@@ -23,24 +19,21 @@ public class ThemePark {
     public float RestaurantCLoss { get; set; }  
     private float TotalIncome { get; set; }  
     private float TotalCost { get; set; }  
-    private List<(string, float)> ThemeParkRides;
     private List<(string, float, float)> ThemeParkFood; 
 
     public ThemePark()
     {
-        ThemeParkRides = new List<(string, float)>();
         ThemeParkFood = new List<(string, float, float)>();
-    }
-    public float CalculateRideSpeedAverage()  
-    {  
-        return (ThemeParkRideASpeed + ThemeParkRideBSpeed + ThemeParkRideCSpeed) / 3;  
+        ThemeParkRides = new List<ThemeParkRide>();
     }
 
-    private List<(string, float)> ConvertRidesNameToList() {
-        ThemeParkRides.Add((ThemeParkRideAName, ThemeParkRideASpeed));
-        ThemeParkRides.Add((ThemeParkRideBName, ThemeParkRideBSpeed));
-        ThemeParkRides.Add((ThemeParkRideCName, ThemeParkRideCSpeed));
-        return ThemeParkRides;
+    public float CalculateRideSpeedTotal() {
+        return ThemeParkRides.Sum(ride => ride.Speed);
+    }
+
+    public float CalculateRideSpeedAverage()  
+    {  
+        return CalculateRideSpeedTotal() / ThemeParkRides.Count;
     }
 
     private List<(string, float, float)> ConvertRestaurantsToList() {
@@ -63,7 +56,7 @@ public class ThemePark {
     }
 
     private void CalculateTotalRideCost() {
-        TotalCost += (float)((ThemeParkRideASpeed + ThemeParkRideBSpeed + ThemeParkRideCSpeed) * .50 * 12);
+        TotalCost += (float)(CalculateRideSpeedTotal() * .50 * 12);
     }
 
     private float CalculateProfit()  
@@ -77,8 +70,8 @@ public class ThemePark {
 
     public void PrintRides() {
         Console.WriteLine(ThemeParkName + " contains the following rides: \n");
-        foreach ((string, float) ride in ConvertRidesNameToList()) {
-            Console.WriteLine(ride.Item1 + " which goes " + ride.Item2 + "\n");
+        foreach (ThemeParkRide ride in ThemeParkRides) {
+            Console.WriteLine(ride.RideDetails());
         }
     }
 

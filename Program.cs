@@ -10,12 +10,10 @@ namespace SOLIDApp
             warwarLand.TicketCost = 90;
             warwarLand.AverageDailyAttendance = 50000;            
             warwarLand.ThemeParkName = "War War Land";
-            warwarLand.ThemeParkRideAName = "Haunted Mansion";
-            warwarLand.ThemeParkRideASpeed = 5;
-            warwarLand.ThemeParkRideBName = "Teacups";
-            warwarLand.ThemeParkRideBSpeed = 7;
-            warwarLand.ThemeParkRideCName = "Pirates of the Caribean";
-            warwarLand.ThemeParkRideCSpeed = 5;
+            warwarLand.ThemeParkRides.Add(new ThemeParkRide("Haunted Mansion", 5));
+            warwarLand.ThemeParkRides.Add(new ThemeParkRide("Teacups", 7));
+            warwarLand.ThemeParkRides.Add(new ThemeParkRide("Pirates of the Caribean", 5));
+            
             warwarLand.PrintRides();
 
             warwarLand.RestaurantAName = "Pizzasaurus Rex";
