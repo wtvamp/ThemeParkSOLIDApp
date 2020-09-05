@@ -11,7 +11,7 @@ namespace SOLIDApp
             warwarLand.AverageDailyAttendance = 50000;            
             warwarLand.ThemeParkName = "War War Land";
 
-            warwarLand.ThemeParkRides.Add(new ThemeParkRide("Haunted Mansion", 5));
+            warwarLand.ThemeParkRides.Add(new DarkRide());
             warwarLand.ThemeParkRides.Add(new ThemeParkRide("Teacups", 7));
             warwarLand.ThemeParkRides.Add(new ThemeParkRide("Pirates of the Caribean", 5));
             warwarLand.PrintRides();
