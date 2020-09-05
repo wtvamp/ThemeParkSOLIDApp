@@ -31,11 +31,7 @@ public class ThemePark {
         ThemeParkRides = new List<(string, float)>();
         ThemeParkFood = new List<(string, float, float)>();
     }
-    public float CalculateRideSpeedAverage()  
-    {  
-        return (ThemeParkRideASpeed + ThemeParkRideBSpeed + ThemeParkRideCSpeed) / 3;  
-    }
-
+    
     private List<(string, float)> ConvertRidesNameToList() {
         ThemeParkRides.Add((ThemeParkRideAName, ThemeParkRideASpeed));
         ThemeParkRides.Add((ThemeParkRideBName, ThemeParkRideBSpeed));
