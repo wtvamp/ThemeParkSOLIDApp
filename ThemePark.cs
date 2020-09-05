@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class ThemePark {
-    public List<ThemeParkRide> ThemeParkRides;
+    public List<IThemeParkRide> ThemeParkRides;
     public List<Restaurant> Restaurants;
     public string ThemeParkName;
     public float TicketCost;
@@ -13,7 +13,7 @@ public class ThemePark {
 
     public ThemePark()
     {
-        ThemeParkRides = new List<ThemeParkRide>();
+        ThemeParkRides = new List<IThemeParkRide>();
         Restaurants = new List<Restaurant>();
     }
 
@@ -45,7 +45,7 @@ public class ThemePark {
 
     public void PrintRides() {
         Console.WriteLine(ThemeParkName + " contains the following rides: \n");
-        foreach (ThemeParkRide ride in ThemeParkRides) {
+        foreach (IThemeParkRide ride in ThemeParkRides) {
             Console.WriteLine(ride.RideDetails());
         }
     }
