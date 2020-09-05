@@ -13,9 +13,10 @@ public class ThemePark {
 
     public ThemePark()
     {
-        Restaurants = new List<Restaurant>();
         ThemeParkRides = new List<ThemeParkRide>();
+        Restaurants = new List<Restaurant>();
     }
+
 
     private void CalculateTotalRestaurantIncome() {
         TotalIncome += AverageDailyAttendance * (Restaurant.TotalIncome/3);
