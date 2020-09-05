@@ -1,4 +1,5 @@
-public class ThemeParkRide {
+public class ThemeParkRide : IThemeParkRide
+{
     public string Name;
     public float Speed;
     public static float TotalSpeed;
@@ -10,7 +11,8 @@ public class ThemeParkRide {
         TotalSpeed += speed;
     }
 
-    public string RideDetails() {
+    public string RideDetails()
+    {
         return this.Name + " which goes " + this.Speed + "\n";
     }
 }
