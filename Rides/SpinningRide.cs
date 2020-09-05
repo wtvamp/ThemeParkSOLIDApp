@@ -9,6 +9,7 @@ public class SpinningRide : ThemeParkRide
     }
     public override string ExtraDetails()
     {
-        return base.ExtraDetails();
+        return this.Name + " is a spinning ride that spins " + this.spinningDegree.ToString() +
+        " degrees at " + this.spinnigSpeed.ToString() + "mph.\n";
     }
 }

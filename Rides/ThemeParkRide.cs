@@ -13,7 +13,7 @@ public abstract class ThemeParkRide : IThemeParkRide
 
     public virtual string RideDetails()
     {
-        return this.Name + " which goes " + this.Speed + "\n";
+        return this.Name + " goes " + this.Speed + "mph.\n";
     }
 
     public virtual string ExtraDetails()
