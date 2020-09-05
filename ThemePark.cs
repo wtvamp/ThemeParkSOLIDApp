@@ -17,11 +17,6 @@ public class ThemePark {
         ThemeParkRides = new List<ThemeParkRide>();
     }
 
-    public float CalculateRideSpeedAverage()  
-    {  
-        return ThemeParkRide.TotalSpeed / ThemeParkRides.Count;
-    }
-    
     private void CalculateTotalRestaurantIncome() {
         TotalIncome += AverageDailyAttendance * (Restaurant.TotalIncome/3);
     }
