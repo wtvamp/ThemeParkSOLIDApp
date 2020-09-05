@@ -1,4 +1,4 @@
-public class ThemeParkRide : IThemeParkRide
+public abstract class ThemeParkRide : IThemeParkRide
 {
     public string Name;
     public float Speed;
@@ -14,5 +14,10 @@ public class ThemeParkRide : IThemeParkRide
     public virtual string RideDetails()
     {
         return this.Name + " which goes " + this.Speed + "\n";
+    }
+
+    public virtual string ExtraDetails()
+    {
+        throw new System.NotImplementedException();
     }
 }

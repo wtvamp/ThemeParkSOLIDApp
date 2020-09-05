@@ -12,8 +12,8 @@ namespace SOLIDApp
             warwarLand.ThemeParkName = "War War Land";
 
             warwarLand.ThemeParkRides.Add(new DarkRide("Haunted Mansion", 5, 7));
-            warwarLand.ThemeParkRides.Add(new ThemeParkRide("Teacups", 7));
-            warwarLand.ThemeParkRides.Add(new ThemeParkRide("Pirates of the Caribean", 5));
+            warwarLand.ThemeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
+            warwarLand.ThemeParkRides.Add(new DarkRide("Pirates of the Carribean", 5, 4));
             warwarLand.PrintRides();
 
             warwarLand.Restaurants.Add(new Restaurant("Pizzasaurus Rex", 5, 3));

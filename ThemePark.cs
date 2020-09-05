@@ -46,6 +46,7 @@ public class ThemePark {
     public void PrintRides() {
         Console.WriteLine(ThemeParkName + " contains the following rides: \n");
         foreach (IThemeParkRide ride in ThemeParkRides) {
+            Console.WriteLine(ride.ExtraDetails());
             Console.WriteLine(ride.RideDetails());
         }
     }

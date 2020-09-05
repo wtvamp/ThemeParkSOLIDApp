@@ -6,10 +6,8 @@ public class DarkRide : ThemeParkRide
     {
         this.scariness = scariness;
     }
-    
-    public override string RideDetails()
-    {
-        return this.Name + " is a dark ride which is rated " + this.scariness.ToString() + " on a scale of 1-10.\n" + 
-        base.RideDetails();
+
+    public override string ExtraDetails() {
+        return this.Name + " is a dark ride which is rated " + this.scariness.ToString() + " on a scale of 1-10.\n";
     }
 }
