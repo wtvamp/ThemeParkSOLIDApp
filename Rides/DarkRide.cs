@@ -2,6 +2,6 @@ public class DarkRide : IThemeParkRide
 {
     public string RideDetails()
     {
-        throw new System.NotImplementedException("This type ride isn't implemented yet");
+        return "This is a dark ride and it's details will be provided later\n";
     }
 }
