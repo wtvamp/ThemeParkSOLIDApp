@@ -1,7 +1,15 @@
-public class DarkRide : IThemeParkRide
+public class DarkRide : ThemeParkRide
 {
-    public string RideDetails()
+    // Rated from 0-10
+    private int scariness;
+    public DarkRide(string name, float speed, int scariness): base(name, speed)
     {
-        return "This is a dark ride and it's details will be provided later\n";
+        this.scariness = scariness;
+    }
+    
+    public override string RideDetails()
+    {
+        return this.Name + " is a dark ride which is rated " + this.scariness.ToString() + " on a scale of 1-10.\n" + 
+        base.RideDetails();
     }
 }

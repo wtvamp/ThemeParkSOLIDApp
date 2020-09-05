@@ -11,7 +11,7 @@ public class ThemeParkRide : IThemeParkRide
         TotalSpeed += speed;
     }
 
-    public string RideDetails()
+    public virtual string RideDetails()
     {
         return this.Name + " which goes " + this.Speed + "\n";
     }
