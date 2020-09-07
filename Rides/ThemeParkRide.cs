@@ -2,7 +2,7 @@ public abstract class ThemeParkRide : IThemeParkRide
 {
     public string Name;
     public float Speed;
-    public static float TotalSpeed;
+    public static float? TotalSpeed = 0;
 
     public ThemeParkRide(string name, float speed)
     {
