@@ -8,6 +8,6 @@ public class SpaceRestaurant : Restaurant
 
     public override string ExtraDetails()
     {
-        return "This restaurant pretends it is " + this.milesFromEarth + " miles from Earth.\n";
+        return this.Name + " pretends it is " + this.milesFromEarth + " miles from Earth.\n";
     }
 }
