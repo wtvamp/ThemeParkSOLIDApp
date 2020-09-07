@@ -1,4 +1,5 @@
-public class Restaurant {
+public abstract class Restaurant : IRestaurant
+{
     public string Name;
     public float Income;
     public float Loss;
@@ -13,7 +14,14 @@ public class Restaurant {
         TotalIncome += income;
         TotalLoss += loss;
     }
-    public string RestaurantDetails() {
+
+    public virtual string RestaurantDetails()
+    {
         return this.Name + " which generates " + this.Income + " in income and costs " + this.Loss + "\n";
+    }
+
+    public virtual string ExtraDetails()
+    {
+        throw new System.NotImplementedException();
     }
 }

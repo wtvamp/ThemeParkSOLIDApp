@@ -16,9 +16,9 @@ namespace SOLIDApp
             warwarLand.ThemeParkRides.Add(new DarkRide("Pirates of the Carribean", 5, 4));
             warwarLand.PrintRides();
 
-            warwarLand.Restaurants.Add(new Restaurant("Pizzasaurus Rex", 5, 3));
-            warwarLand.Restaurants.Add(new Restaurant("Planet Mars Burgers", 8, 7.5F));
-            warwarLand.Restaurants.Add(new Restaurant("Salads Undersea", 3, 6));
+            warwarLand.Restaurants.Add(new SpaceRestaurant("Pizzasaurus Rex", 5, 3, 1000));
+            warwarLand.Restaurants.Add(new SpaceRestaurant("Planet Mars Burgers", 8, 7.5F, 1000));
+            warwarLand.Restaurants.Add(new UnderseaRestaurant("Salads Undersea", 3, 6, 1000));
             warwarLand.PrintRestaurants();
 
             warwarLand.PrintProfit();
