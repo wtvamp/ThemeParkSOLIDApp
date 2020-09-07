@@ -13,7 +13,8 @@ namespace SOLIDApp
 
             warwarLand.ThemeParkRides.Add(new DarkRide("Haunted Mansion", 5, 7));
             warwarLand.ThemeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
-            warwarLand.ThemeParkRides.Add(new DarkRide("Pirates of the Carribean", 5, 4));
+            warwarLand.ThemeParkRides.Add(new BrokenRide("Pirates of the Carribean"));
+            //warwarLand.ThemeParkRides.Add(new DarkRide("Pirates of the Carribean", 5, 4));
             warwarLand.PrintRides();
 
             warwarLand.Restaurants.Add(new SpaceRestaurant("Pizzasaurus Rex", 5, 3, 1000));
