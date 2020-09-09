@@ -6,7 +6,7 @@ public class BrokenRide : ThemeParkRide
 
     public override string ExtraDetails()
     {
-        TotalSpeed = null;
+        //TotalSpeed = null;
         return "This is an example of a broken ride and should not be counted in the total right now";
     }
 }
