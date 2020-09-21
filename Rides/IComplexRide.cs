@@ -1,3 +1,3 @@
-public interface IComplexRide : IThemeParkRide, IExtraDetailsRide {
+public interface IComplexRide : IThemeParkRide, IExtraDetailsRide, ISpinningEngine {
     
 }

@@ -1,4 +1,4 @@
-public class DarkRide : ThemeParkRide, IComplexRide
+public class DarkRide : ThemeParkRide, IExtraDetailsRide
 {
     // Rated from 0-10
     private int scariness;
