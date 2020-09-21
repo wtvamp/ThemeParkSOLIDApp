@@ -18,6 +18,8 @@ public abstract class ThemeParkRide : IThemeParkRide
 
     public virtual string ExtraDetails()
     {
+        // Notice how this method exists on the base class only to throw an exception?
+        // This is an example of violating the interface segregation principle
         throw new System.NotImplementedException();
     }
 }
