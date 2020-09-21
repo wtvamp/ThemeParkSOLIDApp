@@ -1,4 +1,4 @@
-public class SpinningRide : ThemeParkRide
+public class SpinningRide : ThemeParkRide, IComplexRide
 {
     private float spinningDegree;
     private float spinningSpeed;

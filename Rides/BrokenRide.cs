@@ -1,4 +1,4 @@
-public class BrokenRide : ThemeParkRide
+public class BrokenRide : ThemeParkRide, IComplexRide
 {
     public BrokenRide(string name) : base(name, 0)
     {
