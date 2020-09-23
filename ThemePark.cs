@@ -46,10 +46,15 @@ public class ThemePark {
     public void PrintRides() {
         Console.WriteLine(ThemeParkName + " contains the following rides: \n");
         foreach (IThemeParkRide ride in ThemeParkRides) {
-            if (typeof(IThemeParkRide) == typeof(IExtraDetails)) {
+            if (ride is IExtraDetails) {
                 Console.WriteLine(
                    ((IExtraDetails)ride).ExtraDetails()
                 );
+            }
+            if (ride is ISpinningEngine) {
+                ((ISpinningEngine)ride).Start(ride.ToString());
+                ((ISpinningEngine)ride).Stop(ride.ToString());
+
             }
             Console.WriteLine(ride.RideDetails());
         }
