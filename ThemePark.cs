@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class ThemePark {
-    public List<IThemeParkRide> ThemeParkRides;
+    public IList<IThemeParkRide> ThemeParkRides;
     public List<Restaurant> Restaurants;
     public string ThemeParkName;
     public float TicketCost;
@@ -11,9 +11,9 @@ public class ThemePark {
     private float TotalIncome { get; set; }  
     private float TotalCost { get; set; }  
 
-    public ThemePark()
+    public ThemePark(IList<IThemeParkRide> themeParkRides)
     {
-        ThemeParkRides = new List<IThemeParkRide>();
+        ThemeParkRides = themeParkRides;
         Restaurants = new List<Restaurant>();
     }
 
