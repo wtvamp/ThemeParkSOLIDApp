@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SOLIDApp
 {
@@ -6,14 +7,18 @@ namespace SOLIDApp
     {
         static void Main(string[] args)
         {
-            ThemePark warwarLand = new ThemePark();
+            List<IThemeParkRide> themeParkRides = new List<IThemeParkRide>();
+            themeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
+            themeParkRides.Add(new BrokenRide("Pirates of the Carribean"));
+            themeParkRides.Add(new DarkRide("Haunted Mansion", 5, 7));
+
+            ThemePark warwarLand = new ThemePark(themeParkRides);
             warwarLand.TicketCost = 90;
             warwarLand.AverageDailyAttendance = 50000;            
             warwarLand.ThemeParkName = "War War Land";
 
-            warwarLand.ThemeParkRides.Add(new DarkRide("Haunted Mansion", 5, 7));
-            warwarLand.ThemeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
-            warwarLand.ThemeParkRides.Add(new BrokenRide("Pirates of the Carribean"));
+            themeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
+            themeParkRides.Add(new BrokenRide("Pirates of the Carribean"));
             //warwarLand.ThemeParkRides.Add(new DarkRide("Pirates of the Carribean", 5, 4));
             warwarLand.PrintRides();
 
