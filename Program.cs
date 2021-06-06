@@ -17,7 +17,7 @@ namespace SOLIDApp
             _logger.LogInformation($"ThemeParkApp Started at {DateTime.Now}");
                         List<IThemeParkRide> themeParkRides = new List<IThemeParkRide>();
             themeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
-            themeParkRides.Add(new BrokenRide("Pirates of the Carribean"));
+            themeParkRides.Add(new BrokenRide("Pirates of the Carribean", _logger));
             themeParkRides.Add(new DarkRide("Haunted Mansion", 5, 7));
 
             ThemePark warwarLand = new ThemePark(themeParkRides);
@@ -26,7 +26,7 @@ namespace SOLIDApp
             warwarLand.ThemeParkName = "War War Land";
 
             themeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
-            themeParkRides.Add(new BrokenRide("Pirates of the Carribean"));
+            themeParkRides.Add(new BrokenRide("Pirates of the Carribean", _logger));
             //warwarLand.ThemeParkRides.Add(new DarkRide("Pirates of the Carribean", 5, 4));
             warwarLand.PrintRides();
 
