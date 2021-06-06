@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace SOLIDApp
 {
-    class Program
+    class ThemeParkApp
     {
-        static void Main(string[] args)
+        private readonly ILogger _logger;
+        public ThemeParkApp(ILogger<ThemeParkApp> logger)
         {
-            List<IThemeParkRide> themeParkRides = new List<IThemeParkRide>();
+            _logger = logger;
+        }
+        public void Start()
+        {
+            _logger.LogInformation($"ThemeParkApp Started at {DateTime.Now}");
+                        List<IThemeParkRide> themeParkRides = new List<IThemeParkRide>();
             themeParkRides.Add(new SpinningRide("Teacups", 7, 360, 3));
             themeParkRides.Add(new BrokenRide("Pirates of the Carribean"));
             themeParkRides.Add(new DarkRide("Haunted Mansion", 5, 7));
@@ -28,6 +36,65 @@ namespace SOLIDApp
             warwarLand.PrintRestaurants();
 
             warwarLand.PrintProfit();
+            //LoadDashboard();
+        }
+
+        private void LoadDashboard()
+        {
+            try
+            {
+                _logger.LogWarning("ThemeParkApp->LoadDashboard() can throw Exception!");
+                int[] a = new int[] { 1, 2, 3, 4, 5 };
+                int b = a[5];
+                Console.WriteLine($"Value of B: {b}");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _logger.LogCritical($"ThemeParkApp->LoadDashboard() Code needs to be fixed");
+            }
+        }
+
+        public void Stop()
+        {
+            _logger.LogInformation($"ThemeParkApp Stopped at {DateTime.Now}");
+        }
+
+        public void HandleError(Exception ex)
+        {
+            _logger.LogError($"ThemeParkApp Error Encountered at {DateTime.Now} & Error is: {ex.Message}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+            ServiceProvider serviceProvider = services.BuildServiceProvider();
+            ThemeParkApp app = serviceProvider.GetService<ThemeParkApp>();
+            try
+            {
+                app.Start();
+            }
+            catch (Exception ex)
+            {
+                app.HandleError(ex);
+            }
+            finally
+            {
+                app.Stop();
+            }
+            Console.ReadLine();
+        }
+        private static void ConfigureServices(ServiceCollection services)
+        {
+            services.AddLogging(configure => configure.AddConsole())
+            .AddTransient<ThemeParkApp>();
         }
     }
 }
