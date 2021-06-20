@@ -1,21 +1,16 @@
 using System;
 using System.Timers;
 
-public class UnderseaRestaurant : Restaurant, IExtraDetails, IDeepFryer
-{
-    private int milesUndersea;
-    private int maxTemp = 200;
+public class DeepFryer : IDeepFryer {
+    private int maxTemp = 500;
+
     private int currentTemp;
+
     private bool isHeating = false;
+
     private Timer newTimer;
-    public UnderseaRestaurant(string name, float income, float loss, int milesUndersea) : base(name, income, loss)
-    {
-        this.milesUndersea = milesUndersea;
-    }
 
-    public int MilesUndersea { get => milesUndersea; set => milesUndersea = value; }
-
-       public string SoundMaxAlarm()
+    public string SoundMaxAlarm()
     {
         Console.WriteLine("The deep fryer is at it's maximum");
         return "Beep beep beep beep!";
@@ -48,10 +43,5 @@ public class UnderseaRestaurant : Restaurant, IExtraDetails, IDeepFryer
         this.currentTemp = 0;
         this.isHeating = !this.isHeating;
         return this.isHeating;
-    }
-    
-    string IExtraDetails.ExtraDetails()
-    {
-        return "This restaurant pretends it is " + this.milesUndersea + " miles under the sea.\n";
     }
 }
