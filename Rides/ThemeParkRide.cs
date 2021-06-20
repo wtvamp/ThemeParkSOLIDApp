@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 public abstract class ThemeParkRide : IThemeParkRide
 {
     private long id;

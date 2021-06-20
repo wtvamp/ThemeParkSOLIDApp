@@ -12,6 +12,10 @@ public class SpinningRide : ThemeParkRide, IExtraDetails, ISpinningEngine
         this.spinningDegree = spinningDegree;
     }
 
+    public float SpinningDegree { get => spinningDegree; set => spinningDegree = value; }
+    public float SpinningSpeed { get => spinningSpeed; set => spinningSpeed = value; }
+    public bool IsRideStarted { get => isRideStarted; set => isRideStarted = value; }
+
     public bool Start(string rideName)
     {
         if (!isRideStarted) {
