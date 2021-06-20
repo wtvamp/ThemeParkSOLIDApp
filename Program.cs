@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RabbitMQ.Client;
 
 namespace SOLIDApp
 {
@@ -20,6 +22,26 @@ namespace SOLIDApp
             themeParkRides.Add(new BrokenRide("Pirates of the Carribean", _logger));
             themeParkRides.Add(new DarkRide("Haunted Mansion", 5, 7));
 
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            using(var connection = factory.CreateConnection())
+            using(var channel = connection.CreateModel())
+            {
+                channel.QueueDeclare(queue: "rides",
+                                    durable: false,
+                                    exclusive: false,
+                                    autoDelete: false,
+                                    arguments: null);
+
+                var body = Encoding.UTF8.GetBytes(themeParkRides[0].RideDetails());
+
+                channel.BasicPublish(exchange: "",
+                                    routingKey: "hello",
+                                    basicProperties: null,
+                                    body: body);
+                Console.WriteLine(" [x] Sent {0}", themeParkRides[0].RideDetails());
+            }
+
+        
             ThemePark warwarLand = new ThemePark(themeParkRides);
             warwarLand.TicketCost = 90;
             warwarLand.AverageDailyAttendance = 50000;            

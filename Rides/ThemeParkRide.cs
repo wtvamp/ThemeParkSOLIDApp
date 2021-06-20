@@ -1,8 +1,14 @@
 public abstract class ThemeParkRide : IThemeParkRide
 {
-    public string Name;
-    public float Speed;
-    public static float? TotalSpeed = 0;
+    private long id;
+    private string name;
+    private float speed;
+    private static float? totalSpeed = 0;
+
+    public string Name { get => name; set => name = value; }
+    public float Speed { get => speed; set => speed = value; }
+    public static float? TotalSpeed { get => totalSpeed; set => totalSpeed = value; }
+    public long Id { get => id; set => id = value; }
 
     public ThemeParkRide(string name, float speed)
     {
